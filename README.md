@@ -13,6 +13,7 @@ An executive-level, interactive Business Intelligence solution built in **Micros
 ## 📌 Problem Statement
 
 AdventureWorks lacked a centralized, real-time reporting system to monitor regional sales trends, evaluate product-level profitability, and track customer acquisition patterns. This created blind spots in identifying high-return product lines and measuring daily performance against the company's 15% revenue growth targets. To resolve this, a multi-page Power BI dashboard was built to transform fragmented operational data into actionable, executive-level insights.
+
 ---
 
 ## 🎯 Business Objectives
