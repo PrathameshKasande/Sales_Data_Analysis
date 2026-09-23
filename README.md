@@ -162,8 +162,7 @@ AdventureWorks_Sales_Analysis/
 │   ├── details.png
 │   └── data_model.png
 │
-├── data/ 
-# Sample raw source CSV datasets
+├── data/                            # Sample raw source CSV datasets
 │   ├── AdventureWorks Sales Data 2020.csv
 │   ├── AdventureWorks Returns Data.csv
 │   ├── AdventureWorks Customer Lookup.csv
