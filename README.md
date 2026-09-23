@@ -8,6 +8,7 @@
 
 An executive-level, interactive Business Intelligence solution built in **Microsoft Power BI** to analyze sales trajectory, profitability, customer acquisition, and return rates for **AdventureWorks**, a global manufacturer of cycling equipment and accessories.
 
+Live Link : https://app.fabric.microsoft.com/Redirect?action=OpenApp&appId=d7cc3ed0-5441-4e9f-a0f7-164dfc687ce4&ctid=56c1d497-700b-49cf-8f8d-3dd6b20d522f&experience=fabric-developer
 ---
 
 ## 📌 Problem Statement
