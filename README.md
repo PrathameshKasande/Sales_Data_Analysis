@@ -156,11 +156,12 @@ Target Revenue =
 AdventureWorks_Sales_Analysis/
 │
 ├── screenshots/                     # Visual proofs and dashboard captures
-│   ├── overview.png
+│  ├── overview.png
 │   ├── customer_analysis.png
 │   ├── product_analysis.png
 │   ├── details.png
 │   └── data_model.png
+│
 │
 ├── data/                            # Sample raw source CSV datasets
 │   ├── AdventureWorks Sales Data 2020.csv
