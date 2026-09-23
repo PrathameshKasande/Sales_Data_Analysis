@@ -152,7 +152,7 @@ Target Revenue =
 ```
 
 📂 Repository Structure : 
-
+```
 AdventureWorks_Sales_Analysis/
     │
 ├── screenshots/                     # Visual proofs and dashboard captures
@@ -183,7 +183,7 @@ AdventureWorks_Sales_Analysis/
 ├── .gitignore                       # Standard Power BI temporary/cache ignores
 └── README.md                        # Portfolio documentation page
 
-
+ ```
 🚀 How to Run Locally: 
      Prerequisites
             • Microsoft Power BI Desktop (Latest Version recommended)
