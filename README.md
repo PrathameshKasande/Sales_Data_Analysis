@@ -154,7 +154,7 @@ Target Revenue =
 📂 Repository Structure : 
 
 AdventureWorks_Sales_Analysis/
-│
+    │
 ├── screenshots/                     # Visual proofs and dashboard captures
 │  ├── overview.png
 │   ├── customer_analysis.png
