@@ -12,13 +12,7 @@ An executive-level, interactive Business Intelligence solution built in **Micros
 
 ## 📌 Problem Statement
 
-Executive leadership at AdventureWorks lacked a centralized, scalable reporting system to monitor multi-channel operations across international markets. Key challenges included:
-
-1. **Fragmented Performance Tracking:** Inability to track month-to-date (MTD), year-to-date (YTD), and rolling 90-day trends across regional sales territories.
-2. **Product Margin & Leakage Visibility:** Difficulty isolating high-volume product lines vs. high-return items, leading to undetected profit leakage[cite: 6, 8].
-3. **Customer Segmentation Blindspots:** Lack of visibility into customer lifetime value, average revenue per customer, and repeat purchasing behaviors[cite: 6].
-4. **Target Tracking Gaps:** Disconnect between forecasted business goals (15% growth targets) and daily operational actuals.
-
+AdventureWorks lacked a centralized, real-time reporting system to monitor regional sales trends, evaluate product-level profitability, and track customer acquisition patterns. This created blind spots in identifying high-return product lines and measuring daily performance against the company's 15% revenue growth targets. To resolve this, a multi-page Power BI dashboard was built to transform fragmented operational data into actionable, executive-level insights.
 ---
 
 ## 🎯 Business Objectives
