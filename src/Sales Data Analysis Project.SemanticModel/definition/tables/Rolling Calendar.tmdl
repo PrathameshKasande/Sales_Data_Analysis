@@ -1,0 +1,40 @@
+table 'Rolling Calendar'
+	lineageTag: f45742a7-a904-46ad-bda4-fa8979c8e401
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1444549c-86be-4d54-9172-be8ba97d1878
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: d06a1bb8-bdd6-4352-a028-623c7034a745
+			defaultHierarchy: LocalDateTable_a6a6d4bd-3a3e-4d4e-90a8-a49f31893def.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Rolling Calendar' = m
+		mode: import
+		source = ```
+				let
+				    Source = #date(2026,01,01),
+				    Custom1 = List.Dates( 
+				    Source,
+				Number.From(DateTime.LocalNow()) - Number.From(Source),
+				#duration(1,0,0,0 )
+				),
+				    #"Converted to Table" = Table.FromList(Custom1, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Date"}})
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

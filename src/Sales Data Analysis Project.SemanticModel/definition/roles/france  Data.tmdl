@@ -1,0 +1,7 @@
+role 'france  Data'
+	modelPermission: read
+
+	tablePermission 'Territory Lookup' = [Country] == "France"
+
+	annotation PBI_Id = 4ca0fa15b41f441385c0142bd3ff417c
+

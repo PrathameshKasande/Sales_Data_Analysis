@@ -1,0 +1,52 @@
+/* ==============================================================================
+   02_TIME_INTELLIGENCE.DAX
+   Calculations for periodic trending, MTD, YTD, and rolling time horizons
+   ============================================================================== */
+
+// 1. 90-Day Rolling Revenue
+
+90 day Rolling Revenue = 
+CALCULATE(
+    [Total Revenue],
+    DATESINPERIOD('Calendar Lookup'[Date],
+    MAX('Calendar Lookup'[Date]),
+    -90,
+    DAY
+    )
+)
+
+
+
+// 2. 90-Day Rolling Profit
+
+90 day Rolling Profit = 
+CALCULATE(
+    [Total Profit],
+    DATESINPERIOD('Calendar Lookup'[Date],
+                 MAX('Calendar Lookup'[Date]),
+                 -90,
+                 DAY
+                )
+        )
+
+
+// 3. Month-to-Date (MTD) Revenue
+MTD Revenue = 
+CALCULATE(
+    [Total Revenue],
+    DATESMTD('Calendar Lookup'[Date]))
+
+
+// 4. Year-to-Date (YTD) Revenue
+YTD Revenue = 
+CALCULATE(
+    [Total Revenue],
+    DATESYTD('Calendar Lookup'[Date]))
+
+
+// 5. Previous Month Orders By DATEADD 
+
+Prev Month Orders = 
+CALCULATE(
+    [Total Orders],
+    DATEADD('Calendar Lookup'[Date],-1,MONTH))

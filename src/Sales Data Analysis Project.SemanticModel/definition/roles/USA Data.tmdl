@@ -1,0 +1,7 @@
+role 'USA Data'
+	modelPermission: read
+
+	tablePermission 'Territory Lookup' = [Country] == "United States"
+
+	annotation PBI_Id = c9697f940c45417c81cacb0677b36357
+

@@ -1,0 +1,36 @@
+/* ==============================================================================
+   01_KPIS_AND_AGGREGATIONS.DAX
+   Core financial totals, customer metrics, and categorical aggregations
+   ============================================================================== */
+
+
+// 1. Total Revenue
+
+Total Revenue = 
+SUMX('Sales Data',
+'Sales Data'[OrderQuantity]* RELATED('Product Lookup'[ProductPrice]) )
+
+// 2. Total Profit
+Total Profit = 
+[Total Revenue] - [Cost Price]
+
+// 3. Total Orders
+Total Orders = 
+DISTINCTCOUNT('Sales Data'[OrderNumber])
+
+// 4. Total Customers
+Total  Customers = 
+DISTINCTCOUNT('Sales Data'[CustomerKey])
+
+// 5. Average Revenue per Customer
+Average Revenue per Customer = 
+DIVIDE([Total Revenue],[Total  Customers])
+
+// 6. Overall Average Price
+Overall average price = 
+ CALCULATE(AVERAGE('Product Lookup'[ProductPrice]),
+           ALL('Product Lookup'))
+
+// 7. % of All Orders
+% of All Orders = 
+DIVIDE([Total Orders],[All Orders],"N/A")

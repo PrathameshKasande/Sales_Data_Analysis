@@ -1,0 +1,28 @@
+/* ==============================================================================
+   03_TARGETS_AND_VARIANCE.DAX
+   Target tracking, return leakages, and operational variance metrics
+   ============================================================================== */
+
+// 1. Return Rate
+Return Rate = 
+DIVIDE([Quantity Returned],[Total Quantity Sold],"Not applicable")
+
+
+
+// 2. % of All Return
+
+% of All Return = 
+DIVIDE([Total Return],[All Returns],"N/A")
+
+
+// 3. Target Revenue
+
+Target Revenue = 
+[Total Revenue]* 1.15
+
+
+// 4. Target Profit
+Target Profit = 
+[Total Profit] * 1.15
+
+

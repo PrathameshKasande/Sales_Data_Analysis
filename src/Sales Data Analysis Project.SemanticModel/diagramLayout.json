@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1503.1999511718479,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 976.21770402693812,
+            "y": 0
+          },
+          "nodeIndex": "Customer Lookup",
+          "nodeLineageTag": "a42b3ccd-23cf-40f8-9f00-fb500406d997",
+          "size": {
+            "height": 328.51865233739437,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 649.3883792539491,
+            "y": 31.014889220400335
+          },
+          "nodeIndex": "Product Categories Lookup",
+          "nodeLineageTag": "4aa0e56d-8caf-44cd-b653-ad03450bf751",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 8.45599888343331
+          },
+          "nodeIndex": "Product Lookup",
+          "nodeLineageTag": "1dbf8ab0-f206-4753-81c3-ef7de29df90c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 298.96823251221315,
+            "y": 36.35692256061877
+          },
+          "nodeIndex": "Product Subcategories Lookup",
+          "nodeLineageTag": "45c45b6a-c0df-442b-b869-c4ceacfa5ddf",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1305.50302768336,
+            "y": 20.761342079772348
+          },
+          "nodeIndex": "Territory Lookup",
+          "nodeLineageTag": "bb975af7-3ec7-4583-b7a8-a1dc65665af7",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1562.0523580391823,
+            "y": 23.497335380372235
+          },
+          "nodeIndex": "Calendar Lookup",
+          "nodeLineageTag": "3ede283e-6996-48af-8ad5-cf77b95b7142",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1903.8350170759768,
+            "y": 104.67866908589447
+          },
+          "nodeIndex": "Rolling Calendar",
+          "nodeLineageTag": "f45742a7-a904-46ad-bda4-fa8979c8e401",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 890.26600968066919,
+            "y": 525.09308631993827
+          },
+          "nodeIndex": "Sales Data",
+          "nodeLineageTag": "5c28fba9-0d61-4b06-a16a-7b7646e67b68",
+          "size": {
+            "height": 292.00000000000011,
+            "width": 244
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1249.2191195101623,
+            "y": 534.96626029096137
+          },
+          "nodeIndex": "Returns Data",
+          "nodeLineageTag": "87ebd6f3-a2f1-4ca1-93f6-7d1ec8712434",
+          "size": {
+            "height": 229.55465959507751,
+            "width": 262.18666294477771
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2187.8350170759768,
+            "y": 356.54654315996919
+          },
+          "nodeIndex": "Measure Table",
+          "nodeLineageTag": "be91946a-90be-4f3d-b354-5114cc5fb09e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100.0000000000018,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

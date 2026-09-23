@@ -1,0 +1,10 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbip.user
+SecurityBindings
+*.tmp
+*.temp
+*~*
+*.pbix.backup
+Thumbs.db
+Desktop.ini

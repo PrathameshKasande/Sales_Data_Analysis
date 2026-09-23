@@ -1,0 +1,124 @@
+table 'Sales Data'
+	lineageTag: 5c28fba9-0d61-4b06-a16a-7b7646e67b68
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c6f1675d-8829-4630-90fc-fb74ad3e887a
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StockDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 17c760e0-c758-42f5-a738-c4e0beb469d4
+		summarizeBy: none
+		sourceColumn: StockDate
+
+		variation Variation
+			isDefault
+			relationship: 445d4440-a56e-4e76-85b2-d4f954949e61
+			defaultHierarchy: LocalDateTable_614b2b0b-ba34-4fba-b5cc-0fb78cd184a1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OrderNumber
+		dataType: string
+		lineageTag: 28326f37-2e77-42c2-bcd2-79e438250d52
+		summarizeBy: none
+		sourceColumn: OrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 61f14629-2043-4514-8a80-1c035f28c6c8
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 982e9824-8abb-4e7e-95fe-a8d836d36a8c
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 13ed75ba-51d3-456e-88c6-0230274371ed
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderLineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: 31bc5a10-18fe-45cb-afb5-5a9f10dd0bfc
+		summarizeBy: sum
+		sourceColumn: OrderLineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: e0b947f9-25c6-497e-8c91-22d9c96d125b
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type' =
+			
+			IF('Sales Data'[OrderQuantity] > 1,
+			"Multiple Quantity",
+			"Single Quantity")
+		lineageTag: 74814e75-2276-4305-8cb2-0d3d6f0cfd6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Sales' = ```
+			
+			   'Sales Data'[OrderQuantity] * RELATED('Product Lookup'[ProductPrice])
+			```
+		lineageTag: fc73f7d9-0db2-44f6-b822-574fca268cf2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Sales Data' = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("C:\Users\prath\Desktop\Adventure Works-Latest\Adventure Works-Latest\Sales Data"),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File (2)", each #"Transform File (2)"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File (2)"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File (2)", Table.ColumnNames(#"Transform File (2)"(#"Sample File (2)"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"OrderDate", type date}, {"StockDate", type date}, {"OrderNumber", type text}, {"ProductKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"TerritoryKey", Int64.Type}, {"OrderLineItem", Int64.Type}, {"OrderQuantity", Int64.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each true),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Source.Name"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

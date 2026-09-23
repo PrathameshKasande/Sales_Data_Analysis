@@ -1,0 +1,54 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transform File from Sales Data'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Sales Data\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Sales Data (2)'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transform File from Sales Data (2)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Territory Lookup","Product Lookup","Customer Lookup","Product Subcategories Lookup","Product Categories Lookup","Calendar Lookup","Rolling Calendar","Sample File","Parameter1","Transform Sample File","Transform File","Returns Data","Sales Data","Sample File (2)","Parameter2","Transform Sample File (2)","Transform File (2)","Measure Table"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Territory Lookup'
+ref table 'Product Lookup'
+ref table 'Customer Lookup'
+ref table DateTableTemplate_ad37d0bd-d532-4cfa-9f07-19898021ea90
+ref table LocalDateTable_cc14a9c6-5849-48f8-bf3d-9c7060e60dc8
+ref table 'Product Subcategories Lookup'
+ref table 'Product Categories Lookup'
+ref table 'Calendar Lookup'
+ref table LocalDateTable_753ab0e8-b1ef-4c3c-9a01-d72c4159dc47
+ref table LocalDateTable_cec33c28-1612-4e9e-8c15-aba3169b3025
+ref table LocalDateTable_6609443d-168d-404d-9a15-02a1ac574bcd
+ref table 'Rolling Calendar'
+ref table LocalDateTable_a6a6d4bd-3a3e-4d4e-90a8-a49f31893def
+ref table 'Returns Data'
+ref table 'Sales Data'
+ref table LocalDateTable_614b2b0b-ba34-4fba-b5cc-0fb78cd184a1
+ref table 'Measure Table'
+ref table LocalDateTable_5bb00f3b-c24e-4cab-b6e9-17aafc725f5f
+
+ref role 'france  Data'
+ref role 'USA Data'
+
+ref cultureInfo en-US
+
